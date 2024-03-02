@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({ path: '../.env' });
 const jsonld = require('jsonld');
 const DKG = require('../index.js');
 
@@ -8,13 +8,10 @@ const PUBLIC_KEY = process.env.PUBLIC_KEY;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const ENVIRONMENT = 'mainnet';
 
-console.log(OT_NODE_HOSTNAME, 'lee')
-
 const DkgClient = new DKG({
     environment: ENVIRONMENT,
     endpoint: OT_NODE_HOSTNAME,
     port: OT_NODE_PORT,
-    useSSL: true,
     blockchain: {
         name: 'gnosis:100',
         publicKey: PUBLIC_KEY,
